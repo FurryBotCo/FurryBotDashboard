@@ -1,3 +1,4 @@
+import Container from './components/Container';
 import Layout from './components/Layout';
 import React from 'react';
 
@@ -10,6 +11,8 @@ export default function Homepage({ hello }: { hello: string }) {
       path: '/'
     }}
   >
-    Hi, {hello}. How are you?
+    <Container>
+      <p>Hi, {hello}. How are you today? OwO</p>
+    </Container>
   </Layout>;
 }

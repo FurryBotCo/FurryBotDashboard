@@ -9,10 +9,11 @@ function getRequestDuration(start: [number, number]) {
 
 const mod: Middleware = (logger: Logger) => {
   return (req, res, next) => {
+    res.setHeader('X-Powered-By', '2 cute furries (https://github.com/FurryBotCo/FurryBotDashboard)');
     next(); // Let it continue
 
     const start = process.hrtime();
-    onFinished(res, (error, res) => {
+    onFinished(res, (_, res) => {
       let color;
 
       // this is gonna get real messy...

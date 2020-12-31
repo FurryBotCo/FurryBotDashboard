@@ -23,11 +23,12 @@ function EmbedPreview({ embed }: { embed: LayoutEmbed }) {
 }
 
 export default function Layout({ children, title, embed }: LayoutProperties) {
-  return <html lang='en_US'>
+  return <html lang='en'>
     <head>
       <title>Furry Bot{title ? ` - ${title}` : ''}</title>
       <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
+      <meta name='description' content='A fun multi-purpose bot for (furry) Discord servers!' />
       <link rel='stylesheet' href='/static/css/style.css' />
       <link rel='shortcut icon' href='https://cdn.floofy.dev/images/August.png' />
       <link rel='icon' href='https://cdn.floofy.dev/images/August.png' />
@@ -35,6 +36,7 @@ export default function Layout({ children, title, embed }: LayoutProperties) {
       {embed ? <EmbedPreview {...{ embed }} /> : null}
     </head>
     <body>
+      <div className='py-6' />
       {children}
     </body>
   </html>;
