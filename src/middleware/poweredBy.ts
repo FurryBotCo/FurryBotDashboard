@@ -2,8 +2,7 @@ import type { Middleware } from '../structures';
 
 const mod: Middleware = () => {
   return (_, res, next) => {
-    res.setHeader('Access-Control-Allow-Methods', 'GET');
-    res.setHeader('Access-COntrol-Allow-Origin', '*');
+    res.setHeader('X-Powered-By', '2 cute furries (https://github.com/FurryBotCo/FurryBotDashboard)');
 
     next();
   };

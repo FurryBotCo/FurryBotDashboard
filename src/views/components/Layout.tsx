@@ -1,0 +1,41 @@
+import React from 'react';
+
+interface LayoutProperties {
+  children?: React.ReactNode;
+  title?: string;
+  embed?: LayoutEmbed;
+}
+
+interface LayoutEmbed {
+  description: string;
+  image?: string;
+  title: string;
+  path: string;
+}
+
+function EmbedPreview({ embed }: { embed: LayoutEmbed }) {
+  return <>
+    <meta property='og:description' content={embed.description} />
+    <meta property='og:title' content={embed.title} />
+    <meta property='og:url' content={`https://furry.bot${embed.path}`} />
+    {embed.image !== undefined ? <meta property='og:image' content={embed.image} /> : null}
+  </>;
+}
+
+export default function Layout({ children, title, embed }: LayoutProperties) {
+  return <html lang='en_US'>
+    <head>
+      <title>Furry Bot{title ? ` - ${title}` : ''}</title>
+      <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
+      <meta name='viewport' content='width=device-width, initial-scale=1' />
+      <link rel='stylesheet' href='/static/css/style.css' />
+      <link rel='shortcut icon' href='https://cdn.floofy.dev/images/August.png' />
+      <link rel='icon' href='https://cdn.floofy.dev/images/August.png' />
+      <meta charSet='UTF-8' />
+      {embed ? <EmbedPreview {...{ embed }} /> : null}
+    </head>
+    <body>
+      {children}
+    </body>
+  </html>;
+}

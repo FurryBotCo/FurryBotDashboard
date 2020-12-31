@@ -6,6 +6,7 @@ import RequestHandler from './handlers/RequestHandler';
 import StaticHandler from './handlers/StaticHandler';
 import ReactEngine from './engine/ReactEngine';
 import { Logger } from './Logger';
+import { join } from 'path';
 import https from 'https';
 import http from 'http';
 import os from 'os';
@@ -35,6 +36,8 @@ export class Server {
 
     // Add .jsx files into the engine for rendering
     this.app.engine('jsx', (path, options) => ReactEngine(path, options));
+    this.app.set('view engine', 'jsx');
+    this.app.set('views', join(__dirname, '..', 'views'));
 
     // Run everything before loading anything
     await this.middleware.load();
