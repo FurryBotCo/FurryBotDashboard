@@ -48,7 +48,7 @@ export class Logger {
   private _formatMessage(...messages: LogMessage[]): string {
     return messages.map<string>((message: unknown) => {
       if ([null, undefined].includes(<any> message)) return leeks.colors.cyan(message === null ? 'null' : 'undefined');
-      if (message instanceof Array) return `[${message.map(this._formatMessage).join('\n')}]`;
+      if (message instanceof Array) return message.join('\n');
       if (message instanceof Date) return leeks.colors.cyan(message.toUTCString());
       if (message instanceof Error) {
         const e = [`${message.name}: ${message.message}`];

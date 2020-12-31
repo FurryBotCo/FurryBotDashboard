@@ -108,3 +108,6 @@ build/
 
 # Ignore .vscode
 .vscode/
+
+# Ignore config
+src/config.json

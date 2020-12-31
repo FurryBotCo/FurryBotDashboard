@@ -1,16 +1,13 @@
 import type { Request, Response } from 'express';
-import { Server, Logger } from '..';
+import type { RouteDefinition } from '../decorators/Route';
+import { Logger, Endpoint } from '..';
 
 export default class EndpointHandler {
-  private logger: Logger;
-  private server: Server;
+  public logger: Logger = new Logger('RequestHandler');
 
-  constructor(server: Server) {
-    this.server = server;
-    this.logger = new Logger('RequestHandler');
-  }
+  async onRequest(endpoint: Endpoint, route: RouteDefinition, req: Request, res: Response) {
+    this.logger.request(`<- ${req.method.toUpperCase()} ${req.url} (route: ${route.endpoint})`);
 
-  async onRequest(req: Request, res: Response) {
-    this.logger.request(`-> ${req.method.toUpperCase()} ${req.url}`);
+    return res.render('Homepage', { hello: 'August' });
   }
 }

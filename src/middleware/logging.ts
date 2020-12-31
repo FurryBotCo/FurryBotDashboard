@@ -7,9 +7,7 @@ function getRequestDuration(start: [number, number]) {
   return (difference[0] * 1e9 + difference[1]) / 1e6;
 }
 
-const mod: Middleware = () => {
-  const logger = new Logger('Requests');
-
+const mod: Middleware = (logger: Logger) => {
   return (req, res, next) => {
     next(); // Let it continue
 
@@ -29,8 +27,8 @@ const mod: Middleware = () => {
       else
         color = leeks.colors.grey;
 
-      const time = color(`~${getRequestDuration(start).toFixed}ms`);
-      logger.request(`<- ${req.method.toUpperCase()} ${req.url} @ ${req.ip} | ${time}`);
+      const time = color(`~${getRequestDuration(start)}ms`);
+      logger.request(`-> ${req.method.toUpperCase()} ${req.url} | ${time}`);
     });
   };
 };

@@ -50,7 +50,7 @@ export class Endpoint {
       const route = routes[i];
       const path = Endpoint._mergePrefix(this, route.endpoint);
 
-      this.routes.set(path, route);
+      this.routes.emplace(path, route);
     }
   }
 }

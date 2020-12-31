@@ -1,0 +1,16 @@
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+
+// Document-related stuff
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  background-color: #706E86;
+  height: 100%;
+  width: 100%;
+}

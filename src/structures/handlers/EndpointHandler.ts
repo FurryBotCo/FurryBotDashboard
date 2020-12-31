@@ -59,7 +59,17 @@ export default class EndpointHandler extends Collection<string, Endpoint> {
       const routes = getRouteDefinitions(endpoint);
       endpoint.append(routes);
 
-      this.emplace(endpoint.prefix, endpoint);
+      for (let i = 0; i < routes.length; i++) {
+        const route = routes[i];
+        const prefix = Endpoint._mergePrefix(endpoint, route.endpoint);
+
+        this.logger.info(`Found route ${prefix} in endpoint ${endpoint.prefix}`);
+        this.server.app.get(prefix, (req, res) =>
+          this.server.requests.onRequest(endpoint, route, req, res)
+        );
+      }
+
+      this.set(endpoint.prefix, endpoint);
       this.logger.info(`Added endpoint "${endpoint.prefix}" successfully with ${routes.length} routes.`);
     }
   }

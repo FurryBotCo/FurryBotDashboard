@@ -9,7 +9,7 @@ type ExpressMiddleware = (
   next: NextFunction
 ) => void;
 
-export type Middleware = () => ExpressMiddleware;
+export type Middleware = (...args: any[]) => ExpressMiddleware;
 
 export default class EndpointHandler {
   private directory: string;
@@ -61,7 +61,7 @@ export default class EndpointHandler {
       }
 
       const middleware: Middleware = ctor.default;
-      this.server.app.use(middleware());
+      this.server.app.use(middleware(this.server.requests.logger));
     }
 
     this.logger.info('Loaded all middleware!');
