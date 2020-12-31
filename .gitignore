@@ -105,3 +105,6 @@ dist
 
 # Ignore TypeScript builds
 build/
+
+# Ignore .vscode
+.vscode/
