@@ -2,7 +2,7 @@ import type { RouteDefinition } from './decorators/Route';
 import type { Server } from './Server';
 import { Collection } from '@augu/collections';
 
-/** Represents a endpoint to interact with Hibiscus */
+/** Represents a endpoint to interact with the dashboard */
 export class Endpoint {
   /** The server instance */
   public server!: Server;
@@ -34,7 +34,7 @@ export class Endpoint {
 
   /**
    * Initialises this [Endpoint] to populate [Endpoint.server]
-   * @param server The Hibiscus server running
+   * @param server The server running
    */
   init(server: Server) {
     this.server = server;

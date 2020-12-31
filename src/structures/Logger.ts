@@ -4,7 +4,6 @@ import leeks from 'leeks.js';
 // List of colors for the log levels
 const Colors = {
   request: leeks.hex('#9B8FEF', '[Request]'),
-  handle:  leeks.hex('#699DE0', '[Handle]'),
   debug:   leeks.hex('#4F7CA3', '[Debug]'),
   error:   leeks.hex('#FF2255', '[Error]'),
   warn:    leeks.hex('#FFFFC5', '[Warn]'),
@@ -18,7 +17,6 @@ enum LogLevel {
   Warn = 'warn',
   Error = 'error',
   Debug = 'debug',
-  Handle = 'handle', // handles api requests
   Request = 'request'
 }
 
@@ -101,10 +99,6 @@ export class Logger {
 
   debug(...messages: LogMessage[]) {
     return this.write(LogLevel.Debug, ...messages);
-  }
-
-  handle(...messages: LogMessage[]) {
-    return this.write(LogLevel.Handle, ...messages);
   }
 
   request(...messages: LogMessage[]) {
