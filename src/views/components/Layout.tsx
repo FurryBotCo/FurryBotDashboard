@@ -1,5 +1,6 @@
-import React from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
+import React from 'react';
 
 interface LayoutProperties {
   children?: React.ReactNode;
@@ -34,6 +35,7 @@ export default function Layout({ children, title, embed }: LayoutProperties) {
       <link rel='stylesheet' href='/static/css/style.css' />
       <link rel='shortcut icon' href='https://cdn.floofy.dev/images/August.png' />
       <link rel='icon' href='https://cdn.floofy.dev/images/August.png' />
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Nunito&family=Yellowtail&display=swap' />
       <meta charSet='UTF-8' />
       {embed ? <EmbedPreview {...{ embed }} /> : null}
 
@@ -42,8 +44,9 @@ export default function Layout({ children, title, embed }: LayoutProperties) {
     </head>
     <body className='bg-gray-700'>
       <Navbar />
-      <div className='py-6' />
+      <div className='py-3' />
       {children}
+      <Footer />
     </body>
   </html>;
 }

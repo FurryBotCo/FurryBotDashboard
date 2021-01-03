@@ -30,12 +30,12 @@ export default function Navbar() {
         draggable='false'
       />
 
-      <span className='text-xl text-white tracking-right font-semibold ml-2'>Furry Bot</span>
+      <span className='yellowtail text-xl text-white tracking-right font-semibold ml-2'>Furry Bot</span>
     </div>
 
     <div className='block lg:hidden'></div>
 
-    <div className='w-full block flex-grow lg:flex lg:items-center lg:w-auto'>
+    <div className='w-full block flex-grow lg:flex lg:items-center lg:w-auto md:hidden'>
       <a href='/' className='block items-center hover:text-blue-400 text-white ml-4'>
         <span>Home</span>
       </a>
@@ -53,7 +53,7 @@ export default function Navbar() {
       </a>
     </div>
 
-    <div className='w-full block right-auto lg:flex lg:items-center lg:w-auto'>
+    <div className='w-full block right-auto lg:flex lg:items-center lg:w-auto md:hidden'>
       {dropped ? <UserDropdown /> : <LoginMenu />}
     </div>
   </nav>;
