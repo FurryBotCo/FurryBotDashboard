@@ -1,7 +1,9 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 interface LayoutProperties {
   children?: React.ReactNode;
+  location?: string;
   title?: string;
   embed?: LayoutEmbed;
 }
@@ -38,7 +40,8 @@ export default function Layout({ children, title, embed }: LayoutProperties) {
       <script defer src='/static/js/dropdown.js' />
       <script defer src='/static/js/themes.js' />
     </head>
-    <body>
+    <body className='bg-gray-700'>
+      <Navbar />
       <div className='py-6' />
       {children}
     </body>

@@ -3,10 +3,7 @@ module.exports = {
     './src/**/*.tsx',
   ],
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor'
-    }
+    extend: {}
   },
   variants: {}
 };

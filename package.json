@@ -16,7 +16,7 @@
     "build:css": "postcss src/static/**/*.scss --dir build/static/css --ext css --verbose",
     "build": "npm run lint && rm -fr build && npm run build:css && tsc && npm run move",
     "lint": "eslint src --ext .ts --fix",
-    "move": "cp -r src/static build/static && cp src/config.json build/config.json"
+    "move": "cp -r src/static build/ && cp src/config.json build/config.json"
   },
   "dependencies": {
     "@augu/collections": "1.0.1",
@@ -33,7 +33,7 @@
     "@augu/eslint-config": "1.9.0",
     "@csstools/postcss-sass": "4.0.0",
     "@types/express": "4.17.9",
-    "@types/json5": "^0.0.30",
+    "@types/json5": "0.0.30",
     "@types/node": "14.14.17",
     "@types/on-finished": "2.3.1",
     "@types/react": "17.0.0",
