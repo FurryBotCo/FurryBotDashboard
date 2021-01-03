@@ -14,8 +14,9 @@
   "scripts": {
     "build:watch": "npm run lint && rm -fr build && npm run build:css && tsc -w",
     "build:css": "postcss src/static/**/*.scss --dir build/static/css --ext css --verbose",
-    "build": "npm run lint && rm -fr build && npm run build:css && tsc",
-    "lint": "eslint src --ext .ts --fix"
+    "build": "npm run lint && rm -fr build && npm run build:css && tsc && npm run move",
+    "lint": "eslint src --ext .ts --fix",
+    "move": "cp -r src/static build/static && cp src/config.json build/config.json"
   },
   "dependencies": {
     "@augu/collections": "1.0.1",

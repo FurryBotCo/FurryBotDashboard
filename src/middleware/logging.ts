@@ -9,7 +9,6 @@ function getRequestDuration(start: [number, number]) {
 
 const mod: Middleware = (logger: Logger) => {
   return (req, res, next) => {
-    res.setHeader('X-Powered-By', '2 cute furries (https://github.com/FurryBotCo/FurryBotDashboard)');
     next(); // Let it continue
 
     const start = process.hrtime();
@@ -22,14 +21,14 @@ const mod: Middleware = (logger: Logger) => {
       else if (res.statusCode >= 400)
         color = leeks.colors.yellow;
       else if (res.statusCode >= 300)
-        color = leeks.colors.grey;
+        color = leeks.colors.magenta;
       else if (res.statusCode >= 200)
         color = leeks.colors.green;
       else
         color = leeks.colors.grey;
 
       const time = color(`~${getRequestDuration(start)}ms`);
-      logger.request(`-> ${req.method.toUpperCase()} ${req.url} | ${time}`);
+      logger.request(`${res.statusCode} on "${req.method.toUpperCase()} ${req.url}" | ${time}`);
     });
   };
 };

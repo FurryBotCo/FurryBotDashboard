@@ -5,5 +5,5 @@ interface ContainerProperties {
 }
 
 export default function Container({ children }: ContainerProperties) {
-  return <div className='container mx-auto sm:px-9 sm:py-3'>{children}</div>;
+  return <div className='container mx-auto'>{children}</div>;
 }

@@ -34,6 +34,9 @@ export default function Layout({ children, title, embed }: LayoutProperties) {
       <link rel='icon' href='https://cdn.floofy.dev/images/August.png' />
       <meta charSet='UTF-8' />
       {embed ? <EmbedPreview {...{ embed }} /> : null}
+
+      <script defer src='/static/js/dropdown.js' />
+      <script defer src='/static/js/themes.js' />
     </head>
     <body>
       <div className='py-6' />
