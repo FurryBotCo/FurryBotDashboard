@@ -1,11 +1,8 @@
 module.exports = {
   plugins: [
-    require('@csstools/postcss-sass')({
-      includePaths: ['./node_modules']
-    }),
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
-    require('cssnano')
+    ['@csstools/postcss-sass', { includePaths: ['./node_modules'] }],
+    'postcss-import',
+    'autoprefixer',
+    'tailwindcss'
   ]
 };
