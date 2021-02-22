@@ -15,11 +15,11 @@
     "build": "npm run lint && npm run clean && next build",
     "start": "npm run lint && npm run clean && next start",
     "clean": "rm -rf build",
-    "lint": "eslint src --ext .ts,.tsx --fix",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
     "dev": "npm run lint && npm run clean && next dev"
   },
   "dependencies": {
-    "next": "10.0.5",
+    "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "sass": "1.32.6",
@@ -34,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "4.14.2",
     "@typescript-eslint/parser": "4.14.2",
     "autoprefixer": "10.2.4",
+    "css-loader": "5.0.1",
     "eslint": "7.19.0",
     "postcss": "8.2.5",
     "postcss-cli": "8.3.1",

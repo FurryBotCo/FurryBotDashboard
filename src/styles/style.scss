@@ -1,0 +1,25 @@
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+
+@import './nunito.scss';
+@import './indie.scss';
+@import './fira.scss';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.text-nunito {
+  font-family: 'Nunito', sans-serif;
+}
+
+.text-indie {
+  font-family: 'Indie Flower', cursive;
+}
+
+.text-fira {
+  font-family: 'Fira Sans', sans-serif;
+}

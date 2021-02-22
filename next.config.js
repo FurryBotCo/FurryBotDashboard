@@ -3,7 +3,6 @@
  * @type {import('next/dist/next-server/server/config').NextConfig}
  */
 module.exports = {
-  pageExtensions: ['.ts', '.tsx'],
   compress: true,
   distDir: 'build',
   trailingSlash: true,
