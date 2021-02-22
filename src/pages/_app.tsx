@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import Navbar from '../components/Navbar';
 import Head from 'next/head';
 
 import '../styles/style.scss';
@@ -10,6 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <title>🐾 Furry Bot 🐾</title>
     </Head>
 
+    <Navbar />
     <Component {...pageProps} />
   </>;
 }

@@ -30,7 +30,7 @@ export default class FurryDocument extends Document {
           <meta charSet='utf-8' />
         </Head>
 
-        <body>
+        <body className='bg-primary'>
           <Main />
           <NextScript />
         </body>
